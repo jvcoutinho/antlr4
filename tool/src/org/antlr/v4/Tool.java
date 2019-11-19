@@ -120,25 +120,25 @@ public class Tool {
 	public boolean exact_output_dir = false;
 
     public static Option[] optionDefs = {
-		new Option("outputDirectory",             "-o", OptionArgType.STRING, "specify output directory where all output is generated"),
-		new Option("libDirectory",                "-lib", OptionArgType.STRING, "specify location of grammars, tokens files"),
-		new Option("generate_ATN_dot",            "-atn", "generate rule augmented transition network diagrams"),
-		new Option("grammarEncoding",             "-encoding", OptionArgType.STRING, "specify grammar file encoding; e.g., euc-jp"),
-		new Option("msgFormat",                   "-message-format", OptionArgType.STRING, "specify output style for messages in antlr, gnu, vs2005"),
-		new Option("longMessages",                "-long-messages", "show exception details when available for errors and warnings"),
-		new Option("gen_listener",                "-listener", "generate parse tree listener (default)"),
-		new Option("gen_listener",                "-no-listener", "don't generate parse tree listener"),
-		new Option("gen_visitor",                 "-visitor", "generate parse tree visitor"),
-		new Option("gen_visitor",                 "-no-visitor", "don't generate parse tree visitor (default)"),
-		new Option("genPackage",                  "-package", OptionArgType.STRING, "specify a package/namespace for the generated code"),
-		new Option("gen_dependencies",            "-depend", "generate file dependencies"),
-		new Option("",                            "-D<option>=value", "set/override a grammar-level option"),
-		new Option("warnings_are_errors",         "-Werror", "treat warnings as errors"),
-		new Option("launch_ST_inspector",         "-XdbgST", "launch StringTemplate visualizer on generated code"),
+        new Option("outputDirectory",	"-o", OptionArgType.STRING, "specify output directory where all output is generated"),
+        new Option("libDirectory",		"-lib", OptionArgType.STRING, "specify location of grammars, tokens files"),
+        new Option("generate_ATN_dot",	"-atn", "generate rule augmented transition network diagrams"),
+		new Option("grammarEncoding",	"-encoding", OptionArgType.STRING, "specify grammar file encoding; e.g., euc-jp"),
+		new Option("msgFormat",			"-message-format", OptionArgType.STRING, "specify output style for messages in antlr, gnu, vs2005"),
+		new Option("longMessages",		"-long-messages", "show exception details when available for errors and warnings"),
+		new Option("gen_listener",		"-listener", "generate parse tree listener (default)"),
+		new Option("gen_listener",		"-no-listener", "don't generate parse tree listener"),
+		new Option("gen_visitor",		"-visitor", "generate parse tree visitor"),
+		new Option("gen_visitor",		"-no-visitor", "don't generate parse tree visitor (default)"),
+		new Option("genPackage",		"-package", OptionArgType.STRING, "specify a package/namespace for the generated code"),
+		new Option("gen_dependencies",	"-depend", "generate file dependencies"),
+		new Option("",					"-D<option>=value", "set/override a grammar-level option"),
+		new Option("warnings_are_errors", "-Werror", "treat warnings as errors"),
+        new Option("launch_ST_inspector", "-XdbgST", "launch StringTemplate visualizer on generated code"),
 		new Option("ST_inspector_wait_for_close", "-XdbgSTWait", "wait for STViz to close before continuing"),
-		new Option("force_atn",                   "-Xforce-atn", "use the ATN simulator for all predictions"),
-		new Option("log",                         "-Xlog", "dump lots of logging info to antlr-timestamp.log"),
-	    new Option("exact_output_dir",            "-Xexact-output-dir", "all output goes into -o dir regardless of paths/package"),
+        new Option("force_atn",			"-Xforce-atn", "use the ATN simulator for all predictions"),
+		new Option("log",   			"-Xlog", "dump lots of logging info to antlr-timestamp.log"),
+	    new Option("exact_output_dir",  "-Xexact-output-dir", "all output goes into -o dir regardless of paths/package"),
 	};
 
 	// helper vars for option management
@@ -854,7 +854,7 @@ public class Tool {
 			// -o . /usr/lib/t.g4 => ./T.java
 			if (fileDirectory != null &&
 				(new File(fileDirectory).isAbsolute() ||
-					fileDirectory.startsWith("~"))) { // isAbsolute doesn't count this :(
+				 fileDirectory.startsWith("~"))) { // isAbsolute doesn't count this :(
 				// somebody set the dir, it takes precendence; write new file there
 				outputDir = new File(outputDirectory);
 			}
